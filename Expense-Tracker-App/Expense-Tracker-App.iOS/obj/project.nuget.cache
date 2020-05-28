@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GXzCA54ajQRqVXTkxjV+xlvSX8bsVw6tXqnbnYvlfuK2Gj05OrdwU3aBVgPY3qU5YHMYf6aB4MI/8pyRWzD7eQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\Expense-Tracker-App.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\synvi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+  ],
+  "logs": []
+}
