@@ -17,5 +17,54 @@ namespace Expense_Tracker_App
         {
             InitializeComponent();
         }
+
+        //protected override void OnAppearing()
+        //{
+        //    var expenses = new List<Expense>();
+        //    var files = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
+
+        //    foreach (var filename in files)
+        //    {
+        //        var note = new Expense
+        //        {
+        //            // TO DO
+        //        };
+        //        expenses.Add(Expense);
+        //    }
+
+        //    listView.ItemsSource = expenses.OrderBy(n => n.Date);
+        //}
+
+
+        // An expense edit page is something we can look into in the future. 
+        private void OnExpenseSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+
+            /*await Navigation.PushModalAsync(new ExpenseEditPage
+            {
+                BindingContext = (Expense)e.SelectedItem
+            });*/
+        }
+
+        private void OnNewBudgetClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+
+            /*await Navigation.PushModalAsync(new BudgetEntryPage
+            {
+                BindingContext = new Budget { }
+            });*/
+        }
+
+        private void OnNewExpenseClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+
+            /*await Navigation.PushModalAsync(new ExpenseEntryPage
+            {
+                BindingContext = new Expense { }
+            });*/
+        }
     }
 }

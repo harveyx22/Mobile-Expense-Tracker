@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {}
+    "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {
+    "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj",
+        "projectUniqueName": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj",
         "projectName": "Expense-Tracker-App",
-        "projectPath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj",
-        "packagesPath": "C:\\Users\\synvi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\obj\\",
+        "projectPath": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj",
+        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\synvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -67,7 +67,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
