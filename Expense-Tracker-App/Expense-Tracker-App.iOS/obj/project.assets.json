@@ -1018,24 +1018,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\synvi\\.nuget\\packages\\": {},
+    "C:\\Users\\peter\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\Expense-Tracker-App.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\Expense-Tracker-App.iOS.csproj",
       "projectName": "Expense-Tracker-App.iOS",
-      "projectPath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\Expense-Tracker-App.iOS.csproj",
-      "packagesPath": "C:\\Users\\synvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\obj\\",
+      "projectPath": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\Expense-Tracker-App.iOS.csproj",
+      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\synvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1049,8 +1049,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {
-              "projectPath": "C:\\Users\\synvi\\OneDrive\\Documents\\Kal Academy\\Assignment 2\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj"
+            "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj": {
+              "projectPath": "C:\\Users\\peter\\Software Engineering Stuff\\Mobile-Expense-Tracker\\Expense-Tracker-App\\Expense-Tracker-App\\Expense-Tracker-App.csproj"
             }
           }
         }
