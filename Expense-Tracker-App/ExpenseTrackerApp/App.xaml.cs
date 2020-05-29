@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Expense_Tracker_App
+namespace ExpenseTrackerApp
 {
     public partial class App : Application
     {

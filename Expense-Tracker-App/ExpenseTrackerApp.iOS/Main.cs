@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Expense_Tracker_App.iOS
+namespace ExpenseTrackerApp.iOS
 {
     public class Application
     {

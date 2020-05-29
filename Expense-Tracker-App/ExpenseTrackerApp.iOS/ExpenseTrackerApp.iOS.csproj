@@ -128,7 +128,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Expense-Tracker-App\ExpenseTrackerApp.csproj">
+    <ProjectReference Include="..\ExpenseTrackerApp\ExpenseTrackerApp.csproj">
       <Project>{5D87EC67-15A8-4EB9-BF2E-E4DC54C0C0CD}</Project>
       <Name>ExpenseTrackerApp</Name>
     </ProjectReference>
