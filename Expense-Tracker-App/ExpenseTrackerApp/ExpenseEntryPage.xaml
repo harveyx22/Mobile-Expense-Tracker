@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Expense Entry"
+             x:Class="ExpenseTrackerApp.ExpenseEntryPage">
+    <ContentPage.Content>
+        <!-- The user should be shown a modal that allows them to input details for their expenses:
+        the name, amount, date the purchase was made on, and an icon to categorize the item.
+        The modal should allow the user to either cancel or save the entry that they make.-->
+
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Name" />
+                <Entry x:Name="name" Placeholder="Expense Name" PlaceholderColor="Olive" ClearButtonVisibility="WhileEditing"
+                   Keyboard="Text" />
+
+                <Label Grid.Row="1" Text="Amount" />
+                <Entry Grid.Row="1"  x:Name="amount" ClearButtonVisibility="WhileEditing" Keyboard="Numeric" />
+
+                <Label Grid.Row="2" Text="Date" />
+                <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
+
+                <Label Grid.Row="3" Text="Category" />
+                <Picker Grid.Row="3" x:Name="category" Title="Select Expense Category">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Baboon</x:String>
+                            <x:String>Capuchin Monkey</x:String>
+                            <x:String>Blue Monkey</x:String>
+                            <x:String>Squirrel Monkey</x:String>
+                            <x:String>Golden Lion Tamarin</x:String>
+                            <x:String>Howler Monkey</x:String>
+                            <x:String>Japanese Macaque</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <!-- <Label Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" /> -->
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+            </Grid>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

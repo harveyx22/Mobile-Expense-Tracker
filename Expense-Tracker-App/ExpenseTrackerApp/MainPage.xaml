@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"             
+             x:Class="ExpenseTrackerApp.MainPage" 
+             Title="This Month's Expenses" 
+             BackgroundColor="#EF5B61">
+
+    <StackLayout Orientation="Vertical" Spacing="10">
+        
+        <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="CenterAndExpand">
+            <Label Text="Current Budget:" FontSize="32" TextColor="Black"/>
+            <Label Text="$XXXXX" FontSize="32" TextColor="Black"/>
+        </StackLayout>
+
+        <Label Text="List of Expenses" FontSize="24" TextColor="Black" HorizontalOptions="Center"/>
+
+        <ListView x:Name="listView" ItemSelected="OnExpenseSelected" VerticalScrollBarVisibility="Always">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Image Source="{Binding IconFilepath}"/>
+                            <Label Grid.Column="1" Text="{Binding Name}"/>
+                            <Label Grid.Column="2" Text="{Binding Amount}" />
+                            <Label Grid.Column="3" Text="{Binding Date}" HorizontalTextAlignment="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand" Margin="0,0,0,25">
+            <Button Text="New Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewBudgetClicked"/>
+            <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />            
+        </StackLayout>
+        
+    </StackLayout>
+
+</ContentPage>
