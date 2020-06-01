@@ -18,14 +18,14 @@ namespace ExpenseTrackerApp
         {
             InitializeComponent();
         }
-         void OnSetBudgetClicked(object sender, EventArgs e)
+        void OnSetBudgetClicked(object sender, EventArgs e)
         {
             var budget = (Budget)BindingContext;
 
             if (string.IsNullOrWhiteSpace(budget.Filename))
             {
                 // Set Budget 
-                var filename = Path.Combine(MainPage.FolderPath, $"{Path.GetRandomFileName()}.budgetes.txt");
+                var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{Path.GetRandomFileName()}.budgets.txt");
                 File.WriteAllText(filename, budget.Text);
             }
             else
@@ -34,3 +34,5 @@ namespace ExpenseTrackerApp
                 File.WriteAllText(budget.Filename, budget.Text);
             }
         }
+    }
+}
