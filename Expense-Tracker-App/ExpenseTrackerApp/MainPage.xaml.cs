@@ -65,6 +65,7 @@ namespace ExpenseTrackerApp
                 BindingContext = new Expense()
             });
 
+
             /*await Navigation.PushModalAsync(new ExpenseEntryPage
             {
                 BindingContext = new Expense { }
