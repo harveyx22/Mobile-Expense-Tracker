@@ -6,16 +6,6 @@ using System.Threading;
 
 namespace ExpenseTrackerApp.Models
 {
-    public enum ExpenseCategory
-    {
-        Food,
-        Travel,
-        EatingOut,
-        Entertainment,
-        Medical,
-        Other
-    }
-
     public class Expense
     {
         public string Name { get; set; }
@@ -26,11 +16,7 @@ namespace ExpenseTrackerApp.Models
 
         public DateTime EntryDate { get; set; }
 
-        public ExpenseCategory Category { get; set; }
-
         public int ExpenseId { get; set; }
-
-        public string IconFilepath { get; set; }
 
         public string Filename { get; set; }
 
