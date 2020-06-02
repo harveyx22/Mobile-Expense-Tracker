@@ -28,11 +28,11 @@ namespace ExpenseTrackerApp
                 var filename = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     $"{Path.GetRandomFileName()}.expense.txt");
-                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {category.SelectedItem}");
+                File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
             }
             else
             {
-                File.WriteAllText(expense.Filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {category.SelectedItem}");
+                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
             }
 
             await Navigation.PopModalAsync();
