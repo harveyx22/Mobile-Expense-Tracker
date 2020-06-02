@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpenseTrackerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -57,9 +58,13 @@ namespace ExpenseTrackerApp
             });*/
         }
 
-        private void OnNewExpenseClicked(object sender, EventArgs e)
+        private async void OnNewExpenseClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushModalAsync(new ExpenseEntryPage
+            { 
+                BindingContext = new Expense()
+            });
+
 
             /*await Navigation.PushModalAsync(new ExpenseEntryPage
             {
