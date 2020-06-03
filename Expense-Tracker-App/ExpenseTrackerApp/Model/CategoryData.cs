@@ -8,20 +8,11 @@ namespace ExpenseTrackerApp.Model
 {
 	class CategoryData
 	{
-		public List<Category> Categories { get; set; }
+		public List<Category> CategoriesList { get; set; }
 
-		public CategoryData()
+		public CategoryData(List<Category> CategoryList)
 		{
-			List<Category> categoriesList = new List<Category>();
-
-			categoriesList.Add(new Category { Name = "House", IconFilepath = Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Assets/Categories/house.png") });
-			categoriesList.Add(new Category { Name = "Pet", IconFilepath = Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Assets/Categories/pet.png") });
-			categoriesList.Add(new Category { Name = "Savings", IconFilepath = Path.Combine(
-					Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Assets/Categories/savings.png") });
-
-			Categories = categoriesList.OrderBy(c => c.Name).ToList();
+			CategoriesList = CategoryList;
 		}
 	}
 }

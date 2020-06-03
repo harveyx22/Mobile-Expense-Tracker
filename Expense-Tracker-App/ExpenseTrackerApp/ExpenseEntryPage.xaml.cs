@@ -14,9 +14,21 @@ namespace ExpenseTrackerApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpenseEntryPage : ContentPage
     {
+        public List<Category> Categories;
+          
         public ExpenseEntryPage()
-        {
+        {                       
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            Categories = new List<Category>();
+            Categories.Add(new Category { IconFilepath = "Assets/Icons/animals.png", Name = "House" });
+            Categories.Add(new Category { IconFilepath = "Assets/Icons/cartoon.png", Name = "Pet" });
+            Categories.Add(new Category { IconFilepath = "Assets/Icons/taunt.png", Name = "Savings" });
+
+            BindingContext = new CategoryData(Categories);
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -28,19 +40,11 @@ namespace ExpenseTrackerApp
                 var filename = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     $"{Path.GetRandomFileName()}.expense.txt");
-<<<<<<< HEAD
                 File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
             }
             else
             {
                 File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
-=======
-                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
-            }
-            else
-            {
-                File.WriteAllText(expense.Filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
->>>>>>> master
             }
 
             await Navigation.PopModalAsync();
