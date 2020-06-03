@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Expense_Tracker_App.Droid;
 
 namespace ExpenseTrackerApp.Droid
 {

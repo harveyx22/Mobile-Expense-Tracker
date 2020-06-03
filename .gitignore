@@ -20,7 +20,15 @@ obj/
 *.userosscache
 *.sln.docstates
 
-# User-specific files (MonoDevelop/Xamarin Studio)
+
+# ignore Xamarin.Android Resource.Designer.cs files
+**/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+**/*.Android/**/[Rr]esource.[Dd]esigner.cs
+**/Android/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
+
+# Xamarin Components
+Components/
 
 # Mono auto generated files
 mono_crash.*
@@ -51,10 +59,15 @@ Generated\ Files/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
 # NUnit
 *.VisualState.xml
 TestResult.xml
-nunit-*.xml
+
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
@@ -77,6 +90,7 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
+*.meta
 *.obj
 *.iobj
 *.pch
@@ -223,6 +237,7 @@ _pkginfo.txt
 *.appxbundle
 *.appxupload
 
+
 # Visual Studio cache files
 # files ending in .cache can be ignored
 *.[Cc]ache
@@ -271,6 +286,7 @@ ServiceFabricBackup/
 *.bim.layout
 *.bim_*.settings
 *.rptproj.rsuser
+*- Backup*.rdl
 *- [Bb]ackup.rdl
 *- [Bb]ackup ([0-9]).rdl
 *- [Bb]ackup ([0-9][0-9]).rdl
@@ -308,6 +324,11 @@ paket-files/
 
 # FAKE - F# Make
 .fake/
+
+
+# JetBrains Rider
+.idea/
+*.sln.iml
 
 # CodeRush personal settings
 .cr/personal
