@@ -1,11 +1,11 @@
-﻿using ExpenseTrackerApp.Models;
+﻿using ExpenseTrackerApp.Model;
+using ExpenseTrackerApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,11 +28,19 @@ namespace ExpenseTrackerApp
                 var filename = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                     $"{Path.GetRandomFileName()}.expense.txt");
+<<<<<<< HEAD
                 File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
             }
             else
             {
                 File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
+=======
+                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
+            }
+            else
+            {
+                File.WriteAllText(expense.Filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
+>>>>>>> master
             }
 
             await Navigation.PopModalAsync();
