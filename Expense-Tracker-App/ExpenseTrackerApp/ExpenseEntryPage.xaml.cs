@@ -28,7 +28,7 @@ namespace ExpenseTrackerApp
             Categories.Add(new Category { IconFilepath = "Assets/Icons/cartoon.png", Name = "Pet" });
             Categories.Add(new Category { IconFilepath = "Assets/Icons/taunt.png", Name = "Savings" });
 
-            BindingContext = new CategoryData(Categories);
+            category.BindingContext = new CategoryData(Categories);
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
