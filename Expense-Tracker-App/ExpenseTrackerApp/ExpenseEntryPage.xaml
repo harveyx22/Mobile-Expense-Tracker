@@ -31,9 +31,10 @@
                 <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
 
                 <Label Grid.Row="3" Text="Category" />
+                
                 <Picker Grid.Row="3" x:Name="category"
                         Title="Select Expense Category"
-                        ItemsSource="{Binding Categories}"
+                        ItemsSource="{Binding CategoriesList}"
                         ItemDisplayBinding="{Binding Name}" />    <!-- Neeeds be changed to IconFilepath-->
             </Grid>
 
