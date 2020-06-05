@@ -86,5 +86,11 @@ namespace ExpenseTrackerApp
                 BindingContext = new Expense { }
             });*/
         }
+        void OnSaveButtonCliked(object sender, EventArgs e)
+        {
+           Double Budget = Double.TryParse();
+           Double Expense = Double.TryParse();
+           result.Text = (Budget - Expense).ToString(); 
+        }
     }
 }
