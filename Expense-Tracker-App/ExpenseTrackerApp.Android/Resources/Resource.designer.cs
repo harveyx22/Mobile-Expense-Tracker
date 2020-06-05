@@ -5788,10 +5788,46 @@ namespace Expense_Tracker_App.Droid
 			public const int notify_panel_notification_icon_bg = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int tooltip_frame_dark = 2131165300;
+			public const int noun_Clothes_552721 = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int tooltip_frame_light = 2131165301;
+			public const int noun_debt_3012453 = 2131165301;
+			
+			// aapt resource value: 0x7F070076
+			public const int noun_dining_53773 = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int noun_entertainment_865340 = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int noun_Fuel_122383 = 2131165304;
+			
+			// aapt resource value: 0x7F070079
+			public const int noun_Gift_3375996 = 2131165305;
+			
+			// aapt resource value: 0x7F07007A
+			public const int noun_groceries_2768498 = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int noun_House_583080 = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int noun_Kid_851482 = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int noun_medical_1853767 = 2131165309;
+			
+			// aapt resource value: 0x7F07007E
+			public const int noun_savings_375755 = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int noun_Traveling_2079053 = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int tooltip_frame_dark = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int tooltip_frame_light = 2131165313;
 			
 			static Drawable()
 			{
