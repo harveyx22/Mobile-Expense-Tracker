@@ -1,4 +1,5 @@
-﻿using ExpenseTrackerApp.Models;
+﻿using ExpenseTrackerApp.Model;
+using ExpenseTrackerApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,12 +51,11 @@ namespace ExpenseTrackerApp
 
         private void OnNewBudgetClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
 
-            /*await Navigation.PushModalAsync(new BudgetEntryPage
+            await Navigation.PushModalAsync(new BudgetEntryPage
             {
-                BindingContext = new Budget { }
-            });*/
+                BindingContext = new Budget()
+            });
         }
 
         private async void OnNewExpenseClicked(object sender, EventArgs e)
@@ -70,6 +70,12 @@ namespace ExpenseTrackerApp
             {
                 BindingContext = new Expense { }
             });*/
+        }
+        void OnSaveButtonCliked(object sender, EventArgs e);
+        {
+           Double Budget = Double.TryParse();
+           Double Expense = Double.TryParse();
+           result.Text = (Budget - Expense).ToString(); 
         }
     }
 }

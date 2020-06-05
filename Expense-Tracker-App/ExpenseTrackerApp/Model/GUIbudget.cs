@@ -12,7 +12,7 @@ namespace ExpenseTrackerApp.Models
 
         public GUIbudget()
         {
-            this.Budget = 500;
+            this.Budget = 500.0;
         }
     }
 }
