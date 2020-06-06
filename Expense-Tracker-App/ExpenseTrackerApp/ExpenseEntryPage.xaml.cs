@@ -29,6 +29,13 @@ namespace ExpenseTrackerApp
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
+            string budget;
+            decimal expense;
+            string result = (budget - expense);
+            if (Budget > 0) 
+            {
+                return result;
+            }
             var expense = (Expense)BindingContext;
             var chosen = (Category)selectCategory.SelectedItem;
             

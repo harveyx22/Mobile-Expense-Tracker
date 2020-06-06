@@ -24,7 +24,7 @@ namespace ExpenseTrackerApp
             //Open (or overwrite) budget text file with new budget value
             string currentBudget = budgetEntry.Text;
             var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
-            File.WriteAllText(budgetFile, currentBudget);
+            File.WriteAllText(budgetFile, currentBudget, result);
             
             // Delete all expenses upon setting new budget
             var files = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
