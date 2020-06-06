@@ -37,7 +37,7 @@ namespace ExpenseTrackerApp
 
             if (string.IsNullOrWhiteSpace(expense.Filename))
             {
-                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {chosen.Name}");
+                File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date};{chosen.Name}");
             }
             else
             {
