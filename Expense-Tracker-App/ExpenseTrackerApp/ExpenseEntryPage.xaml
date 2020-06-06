@@ -9,6 +9,7 @@
              Padding="10"
              BackgroundColor="SkyBlue">
     <ContentPage.Content>
+<<<<<<< HEAD
         <!-- The user should be shown a modal that allows them to input details for their expenses:
         the name, amount, date the purchase was made on, and an icon to categorize the item.
         The modal should allow the user to either cancel or save the entry that they make.-->
@@ -20,6 +21,22 @@
                 <Entry x:Name="name" Placeholder="Expense Name" FontSize="24" ClearButtonVisibility="WhileEditing"
                    Keyboard="Text"/>
             </StackLayout>
+=======
+        
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Name" />
+                <Entry x:Name="name" Placeholder="Expense Name" ClearButtonVisibility="WhileEditing"
+                   Keyboard="Text" />
+>>>>>>> master
 
             <StackLayout Spacing="0">
                 <Label Text="Amount" TextColor="Black" FontSize="24"/>
@@ -31,6 +48,7 @@
                 <DatePicker x:Name="expensedate" Format="d" FontSize="24" VerticalOptions="CenterAndExpand"/>
             </StackLayout>
 
+<<<<<<< HEAD
             <StackLayout Spacing="0">
                 <Label Text="Category" TextColor="Black" FontSize="24"/>
                 <Picker x:Name="category"
@@ -46,6 +64,28 @@
                 <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnCancelButtonClicked" />
             </StackLayout>            
             
+=======
+                <Label Grid.Row="3" Text="Category" />
+
+                <ListView Grid.Row="3" x:Name="selectCategory">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Name}"
+                                       ImageSource="{Binding Image} "/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Grid Grid.Row="4" x:Name="buttons">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                    <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+                </Grid>
+            </Grid>
+>>>>>>> master
         </StackLayout>
 
     </ContentPage.Content>

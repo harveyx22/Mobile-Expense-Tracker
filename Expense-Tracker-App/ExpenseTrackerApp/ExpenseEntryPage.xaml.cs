@@ -1,6 +1,7 @@
 ﻿using ExpenseTrackerApp.Model;
 using ExpenseTrackerApp.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,28 +24,28 @@ namespace ExpenseTrackerApp
 
         protected override void OnAppearing()
         {
-            Categories = new List<Category>();
-            Categories.Add(new Category { IconFilepath = "Assets/Icons/animals.png", Name = "House" });
-            Categories.Add(new Category { IconFilepath = "Assets/Icons/cartoon.png", Name = "Pet" });
-            Categories.Add(new Category { IconFilepath = "Assets/Icons/taunt.png", Name = "Savings" });
-
-            category.BindingContext = new CategoryData(Categories);
+            selectCategory.ItemsSource = CategInfo.Categories; // for listview
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var expense = (Expense)BindingContext;
-            if(string.IsNullOrWhiteSpace(expense.Filename))
+            var chosen = (Category)selectCategory.SelectedItem;
+            var filename = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                $"{Path.GetRandomFileName()}.expense.txt");
+
+            if (string.IsNullOrWhiteSpace(expense.Filename))
             {
-                // create and save expense
-                var filename = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                    $"{Path.GetRandomFileName()}.expense.txt");
-                File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
+                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {chosen.Name}");
             }
             else
             {
+<<<<<<< HEAD
                 File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{String.Format("{0:d}", expensedate.Date)};{category.SelectedItem}");
+=======
+                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {chosen.Name}");
+>>>>>>> master
             }
 
             await Navigation.PopModalAsync();
