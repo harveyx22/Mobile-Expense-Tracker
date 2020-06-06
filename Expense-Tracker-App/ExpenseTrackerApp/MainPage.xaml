@@ -27,7 +27,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="1" Text="Value" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
                 <Label Grid.Column="2" Text="Description" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
-                <Label Grid.Column="3" Text="Date              " FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Label Grid.Column="3" Text="Date            " FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
             </Grid>
         </StackLayout>
 
