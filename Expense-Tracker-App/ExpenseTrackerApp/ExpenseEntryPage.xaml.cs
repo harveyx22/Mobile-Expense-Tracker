@@ -22,24 +22,7 @@ namespace ExpenseTrackerApp
 
         protected override void OnAppearing()
         {
-            var categoriesList = new List<Category>();
-
-            categoriesList.Add(new Category { Name = "Clothes", Image = "clothes.png" });
-            categoriesList.Add(new Category { Name = "Dining", Image = "dining.png" });
-            categoriesList.Add(new Category { Name = "Fuel", Image = "fuel.png" });
-            categoriesList.Add(new Category { Name = "Entertainment", Image = "entertainment.png" });
-            categoriesList.Add(new Category { Name = "Gifts", Image = "gifts.png" });
-            categoriesList.Add(new Category { Name = "Savings", Image = "savings.png" });
-            categoriesList.Add(new Category { Name = "Medical", Image = "medical.png" });
-            categoriesList.Add(new Category { Name = "Kids", Image = "kids.png" });
-            categoriesList.Add(new Category { Name = "Groceries", Image = "groceries.png" });
-            categoriesList.Add(new Category { Name = "Debt", Image = "debt.png" });
-            categoriesList.Add(new Category { Name = "Travel", Image = "travel.png" });
-            categoriesList.Add(new Category { Name = "Housing", Image = "housing.png" });
-
-            // category.ItemsSource = categoriesList.OrderBy(c => c.Name).ToList(); // for picker
-            
-            selectCategory.ItemsSource = categoriesList.OrderBy(c => c.Name).ToList(); // for listview
+            selectCategory.ItemsSource = CategInfo.Categories; // for listview
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)

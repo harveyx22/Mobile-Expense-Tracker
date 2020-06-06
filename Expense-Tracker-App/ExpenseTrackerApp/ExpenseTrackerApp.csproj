@@ -21,10 +21,6 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Assets\Categories\" />
-  </ItemGroup>
-
   <PropertyGroup>
 		<UseShortFileNames>True</UseShortFileNames>
 	</PropertyGroup>
