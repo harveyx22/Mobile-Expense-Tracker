@@ -31,13 +31,11 @@ namespace ExpenseTrackerApp
         {
             var expense = (Expense)BindingContext;
             var chosen = (Category)selectCategory.SelectedItem;
-            var filename = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                $"{Path.GetRandomFileName()}.expense.txt");
-
+            
             if (string.IsNullOrWhiteSpace(expense.Filename))
             {
-                File.WriteAllText(filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
+                expense.Filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{Path.GetRandomFileName()}.expense.txt");
+                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
             }
             else
             {
