@@ -73,6 +73,9 @@
     <ImageAsset Include="Assets.xcassets\Clothes.imageset\clothes.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Clothes.imageset\clothes1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Clothes.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
