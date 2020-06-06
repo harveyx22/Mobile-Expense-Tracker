@@ -11,13 +11,13 @@
     <StackLayout Orientation="Vertical" Spacing="10">
         
         <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="CenterAndExpand">
-            <Label Text="Current Budget:" FontSize="32" TextColor="Black"/>
-            <Label Text="$XXXXX" FontSize="32" TextColor="Black"/>
+            <Label Text="Current Budget: $" FontSize="32" TextColor="Black"/>
+            <Label x:Name="budgetDisplay" FontSize="32" TextColor="Black"/>
         </StackLayout>
 
         <Label Text="List of Expenses" FontSize="24" TextColor="Black" HorizontalOptions="Center"/>
 
-        <ListView x:Name="listView" ItemSelected="OnExpenseSelected" VerticalScrollBarVisibility="Always">
+        <ListView x:Name="listView" VerticalScrollBarVisibility="Always">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -40,7 +40,8 @@
         
         <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand" Margin="0,0,0,25">
             <Button Text="New Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewBudgetClicked"/>
-            <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />            
+            <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />
+            <Button Text="Delete Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnDeleteBudgetClicked" />
         </StackLayout>
         
     </StackLayout>

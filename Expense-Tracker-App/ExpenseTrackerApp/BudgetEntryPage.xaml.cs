@@ -18,21 +18,31 @@ namespace ExpenseTrackerApp
         {
             InitializeComponent();
         }
-        void OnSetBudgetClicked(object sender, EventArgs e)
-        {
-            var budget = (Budget)BindingContext;
 
-            if (string.IsNullOrWhiteSpace(budget.Filename))
+        private async void OnSaveButtonClicked(object sender, EventArgs e)
+        {
+            //Open (or overwrite) budget text file with new budget value
+            string currentBudget = budgetEntry.Text;
+            var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
+            File.WriteAllText(budgetFile, currentBudget);
+            
+            // Delete all expenses upon setting new budget
+            var files = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
+            foreach (var filename in files)
             {
-                // Set Budget 
-                var filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{Path.GetRandomFileName()}.budgets.txt");
-                File.WriteAllText(filename, budget.Text);
+
+                if (File.Exists(filename))
+                {
+                    File.Delete(filename);
+                }
             }
-            else
-            {
-                // Budget Is Set
-                File.WriteAllText(budget.Filename, budget.Text);
-            }
+
+            await Navigation.PopModalAsync();
+        }
+
+        private async void OnCancelButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

@@ -13,7 +13,7 @@
         the name, amount, date the purchase was made on, and an icon to categorize the item.
         The modal should allow the user to either cancel or save the entry that they make.-->
 
-        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="35">
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
 
             <StackLayout Spacing="0">
                 <Label Text="Description" TextColor="Black" FontSize="24"/>
@@ -39,12 +39,11 @@
                         ItemsSource="{Binding CategoriesList}"
                         ItemDisplayBinding="{Binding Name}" />
                 <!-- Neeeds be changed to IconFilepath-->
-            </StackLayout>
-                
+            </StackLayout>                
 
             <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="CenterAndExpand">
                 <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveButtonClicked" />
-                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnCancelButtonClicked" />
             </StackLayout>            
             
         </StackLayout>

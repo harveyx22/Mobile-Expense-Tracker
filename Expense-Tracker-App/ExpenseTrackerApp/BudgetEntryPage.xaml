@@ -4,20 +4,21 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="ExpenseTrackerApp.BudgetEntryPage">
+             x:Class="ExpenseTrackerApp.BudgetEntryPage"
+             Title="Budget Entry"
+             Padding="10"
+             BackgroundColor="SkyBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Editor Placeholder="Set Your Budget"
-                    Text="{Binding Text}"
-                    FontAttributes="Bold"
-                    HeightRequest="100"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Text="Set Budget"
-                        Clicked="OnSetBudgetClicked"/>
-            </Grid>
+        
+        <StackLayout Spacing="35">
+            <Label Text="Enter your budget for the month:" TextColor="Black" FontSize="24"/>            
+            <Entry x:Name ="budgetEntry" Placeholder="$0.00" FontSize="24" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+
+            <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="CenterAndExpand">
+                <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveButtonClicked" />
+                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray"  Clicked="OnCancelButtonClicked" />
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
