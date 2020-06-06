@@ -29,6 +29,7 @@
                 <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
 
                 <Label Grid.Row="3" Text="Category" />
+
                 <ListView Grid.Row="3" x:Name="selectCategory">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -46,7 +47,6 @@
                     <Button Text="Save" Clicked="OnSaveButtonClicked" />
                     <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
                 </Grid>
-
             </Grid>
         </StackLayout>
 

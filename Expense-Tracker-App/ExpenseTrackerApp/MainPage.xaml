@@ -22,10 +22,16 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid>
-                            <Image Source="{Binding IconFilepath}"/>
-                            <Label Grid.Column="1" Text="{Binding Name}"/>
-                            <Label Grid.Column="2" Text="{Binding Amount}" />
-                            <Label Grid.Column="3" Text="{Binding Date}" HorizontalTextAlignment="End" />
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconFilepath}" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding Amount}" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding EntryDate}" TextColor="Black" VerticalOptions="Center"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -15,8 +15,10 @@ namespace ExpenseTrackerApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpenseEntryPage : ContentPage
     {
+        public List<Category> Categories;
+          
         public ExpenseEntryPage()
-        {
+        {                       
             InitializeComponent();
         }
 
