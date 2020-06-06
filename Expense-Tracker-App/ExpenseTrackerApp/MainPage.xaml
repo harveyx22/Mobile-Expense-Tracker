@@ -11,11 +11,25 @@
     <StackLayout Orientation="Vertical" Spacing="10">
         
         <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="CenterAndExpand">
-            <Label Text="Current Budget: $" FontSize="32" TextColor="Black"/>
+            <Label Text="Current Budget: " FontSize="32" TextColor="Black"/>
             <Label x:Name="budgetDisplay" FontSize="32" TextColor="Black"/>
         </StackLayout>
 
-        <Label Text="List of Expenses" FontSize="24" TextColor="Black" HorizontalOptions="Center"/>
+        <Label Text="List of Expenses" FontSize="28" TextColor="Black" HorizontalOptions="Center"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="40">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Text="Value" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Column="2" Text="Description" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Column="3" Text="Date            " FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+            </Grid>
+        </StackLayout>
 
         <ListView x:Name="listView" VerticalScrollBarVisibility="Always">
             <ListView.ItemTemplate>
@@ -23,15 +37,15 @@
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="4*"/>
                                 <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="5*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconFilepath}" VerticalOptions="Center"/>
-                            <Label Grid.Column="1" Text="{Binding Name}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
-                            <Label Grid.Column="2" Text="{Binding Amount}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
-                            <Label Grid.Column="3" Text="{Binding EntryDate}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
+                            <Image Source="{Binding Filename}" VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Label Grid.Column="1" Text="{Binding Amount, StringFormat='${0:F2}'}" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Label Grid.Column="2" Text="{Binding Name}" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Label Grid.Column="3" Text="{Binding ExpenseDate}" FontSize="16" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>                            
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

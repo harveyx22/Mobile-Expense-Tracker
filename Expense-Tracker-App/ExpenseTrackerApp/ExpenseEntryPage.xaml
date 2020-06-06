@@ -13,7 +13,7 @@
 
             <StackLayout Spacing="0">
                 <Label Text="Description" TextColor="Black" FontSize="24"/>
-                <Entry x:Name="name" Placeholder="Expense Name" FontSize="24" ClearButtonVisibility="WhileEditing"
+                <Entry x:Name="name" Placeholder="Expense Description" FontSize="24" ClearButtonVisibility="WhileEditing"
                    Keyboard="Text"/>
             </StackLayout>
 
@@ -29,11 +29,20 @@
 
             <StackLayout Spacing="0">
                 <Label Text="Category" TextColor="Black" FontSize="24"/>
-                <ListView Grid.Row="3" x:Name="selectCategory">
+                <ListView x:Name="selectCategory">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell Text="{Binding Name}"
-                                       ImageSource="{Binding Image}"/>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="24" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                </Grid>
+                            </ViewCell>
+                            <!--<ImageCell ImageSource="{Binding Image}" Text="{Binding Name}"/>-->
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
