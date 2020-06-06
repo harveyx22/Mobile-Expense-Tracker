@@ -44,7 +44,7 @@ namespace ExpenseTrackerApp
             }
             else
             {
-                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date};{category.SelectedItem}");
+                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{String.Format("{0:d}", expensedate.Date)};{category.SelectedItem}");
             }
 
             await Navigation.PopModalAsync();

@@ -5,47 +5,47 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Expense Entry"
-             x:Class="ExpenseTrackerApp.ExpenseEntryPage">
+             x:Class="ExpenseTrackerApp.ExpenseEntryPage"
+             Padding="10"
+             BackgroundColor="SkyBlue">
     <ContentPage.Content>
         <!-- The user should be shown a modal that allows them to input details for their expenses:
         the name, amount, date the purchase was made on, and an icon to categorize the item.
         The modal should allow the user to either cancel or save the entry that they make.-->
 
-        <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="35">
 
-                <Label Text="Name" />
-                <Entry x:Name="name" Placeholder="Expense Name" PlaceholderColor="Olive" ClearButtonVisibility="WhileEditing"
-                   Keyboard="Text" />
+            <StackLayout Spacing="0">
+                <Label Text="Description" TextColor="Black" FontSize="24"/>
+                <Entry x:Name="name" Placeholder="Expense Name" FontSize="24" ClearButtonVisibility="WhileEditing"
+                   Keyboard="Text"/>
+            </StackLayout>
 
-                <Label Grid.Row="1" Text="Amount" />
-                <Entry Grid.Row="1"  x:Name="amount" ClearButtonVisibility="WhileEditing" Keyboard="Numeric" />
+            <StackLayout Spacing="0">
+                <Label Text="Amount" TextColor="Black" FontSize="24"/>
+                <Entry x:Name="amount" Placeholder="$0.00" FontSize="24" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+            </StackLayout>
 
-                <Label Grid.Row="2" Text="Date" />
-                <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
+            <StackLayout Spacing="0">
+                <Label Text="Date" TextColor="Black" FontSize="24"/>
+                <DatePicker x:Name="expensedate" Format="d" FontSize="24" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
 
-                <Label Grid.Row="3" Text="Category" />
-                
-                <Picker Grid.Row="3" x:Name="category"
-                        Title="Select Expense Category"
+            <StackLayout Spacing="0">
+                <Label Text="Category" TextColor="Black" FontSize="24"/>
+                <Picker x:Name="category"
+                        Title="Select Category"                        
+                        FontSize="24"
                         ItemsSource="{Binding CategoriesList}"
-                        ItemDisplayBinding="{Binding Name}" />    <!-- Neeeds be changed to IconFilepath-->
-            </Grid>
+                        ItemDisplayBinding="{Binding Name}" />
+                <!-- Neeeds be changed to IconFilepath-->
+            </StackLayout>
+                
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
-            </Grid>
+            <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="CenterAndExpand">
+                <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveButtonClicked" />
+                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+            </StackLayout>            
             
         </StackLayout>
 
