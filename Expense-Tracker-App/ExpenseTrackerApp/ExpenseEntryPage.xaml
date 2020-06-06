@@ -7,10 +7,7 @@
              Title="Expense Entry"
              x:Class="ExpenseTrackerApp.ExpenseEntryPage">
     <ContentPage.Content>
-        <!-- The user should be shown a modal that allows them to input details for their expenses:
-        the name, amount, date the purchase was made on, and an icon to categorize the item.
-        The modal should allow the user to either cancel or save the entry that they make.-->
-
+        
         <StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
@@ -18,10 +15,11 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
                 <Label Text="Name" />
-                <Entry x:Name="name" Placeholder="Expense Name" PlaceholderColor="Olive" ClearButtonVisibility="WhileEditing"
+                <Entry x:Name="name" Placeholder="Expense Name" ClearButtonVisibility="WhileEditing"
                    Keyboard="Text" />
 
                 <Label Grid.Row="1" Text="Amount" />
@@ -31,21 +29,25 @@
                 <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
 
                 <Label Grid.Row="3" Text="Category" />
-                <Picker Grid.Row="3" x:Name="category"
-                        Title="Select Expense Category"
-                        ItemsSource="{Binding Categories}"
-                        ItemDisplayBinding="{Binding Name}" />    <!-- Neeeds be changed to IconFilepath-->
-            </Grid>
+                <ListView Grid.Row="3" x:Name="selectCategory">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Name}"
+                                       ImageSource="{Binding Image} "/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+                <Grid Grid.Row="4" x:Name="buttons">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                    <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
+                </Grid>
+
             </Grid>
-            
         </StackLayout>
 
     </ContentPage.Content>

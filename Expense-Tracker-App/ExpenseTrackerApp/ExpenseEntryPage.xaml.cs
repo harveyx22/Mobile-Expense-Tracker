@@ -1,6 +1,7 @@
 ﻿using ExpenseTrackerApp.Model;
 using ExpenseTrackerApp.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,20 +20,26 @@ namespace ExpenseTrackerApp
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            selectCategory.ItemsSource = CategInfo.Categories; // for listview
+        }
+
         private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var expense = (Expense)BindingContext;
-            if(string.IsNullOrWhiteSpace(expense.Filename))
+            var chosen = (Category)selectCategory.SelectedItem;
+            var filename = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                $"{Path.GetRandomFileName()}.expense.txt");
+
+            if (string.IsNullOrWhiteSpace(expense.Filename))
             {
-                // create and save expense
-                var filename = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                    $"{Path.GetRandomFileName()}.expense.txt");
-                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
+                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {chosen.Name}");
             }
             else
             {
-                File.WriteAllText(expense.Filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {Categories[category.SelectedIndex].Name}");
+                File.WriteAllText(filename, $"{name.Text}, {amount.Text}, {expensedate.Date}, {chosen.Name}");
             }
 
             await Navigation.PopModalAsync();
