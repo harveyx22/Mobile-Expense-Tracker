@@ -6,18 +6,18 @@
              mc:Ignorable="d"             
              x:Class="ExpenseTrackerApp.MainPage" 
              Title="This Month's Expenses" 
-             BackgroundColor="#EF5B61">
+             BackgroundColor="SkyBlue">
 
     <StackLayout Orientation="Vertical" Spacing="10">
         
         <StackLayout Orientation="Horizontal" Spacing="8" HorizontalOptions="CenterAndExpand">
-            <Label Text="Current Budget:" FontSize="32" TextColor="Black"/>
-            <Label Text="$XXXXX" FontSize="32" TextColor="Black"/>
+            <Label Text="Current Budget: $" FontSize="32" TextColor="Black"/>
+            <Label x:Name="budgetDisplay" FontSize="32" TextColor="Black"/>
         </StackLayout>
 
         <Label Text="List of Expenses" FontSize="24" TextColor="Black" HorizontalOptions="Center"/>
 
-        <ListView x:Name="listView" ItemSelected="OnExpenseSelected" VerticalScrollBarVisibility="Always">
+        <ListView x:Name="listView" VerticalScrollBarVisibility="Always">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -29,9 +29,9 @@
                                 <ColumnDefinition Width="20*"/>
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding IconFilepath}" VerticalOptions="Center"/>
-                            <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" VerticalOptions="Center"/>
-                            <Label Grid.Column="2" Text="{Binding Amount}" TextColor="Black" VerticalOptions="Center"/>
-                            <Label Grid.Column="3" Text="{Binding EntryDate}" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding Name}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding Amount}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding EntryDate}" FontSize="16" TextColor="Black" VerticalOptions="Center"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
@@ -40,7 +40,8 @@
         
         <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand" Margin="0,0,0,25">
             <Button Text="New Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewBudgetClicked"/>
-            <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />            
+            <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />
+            <Button Text="Delete Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnDeleteBudgetClicked" />
         </StackLayout>
         
     </StackLayout>

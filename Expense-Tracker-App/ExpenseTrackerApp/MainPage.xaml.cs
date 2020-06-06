@@ -1,4 +1,5 @@
-﻿using ExpenseTrackerApp.Models;
+﻿using ExpenseTrackerApp.Model;
+using ExpenseTrackerApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,57 +21,46 @@ namespace ExpenseTrackerApp
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            var expenses = new List<Expense>();
-            var files = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
-
-            foreach (var filename in files)
+            // Check if budget text file exists and populate list view with expenses if it does.
+            var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
+            if (File.Exists(budgetFile))
             {
-                var expenseText = File.ReadAllText(filename).Split(';');
+                var budgetText = File.ReadAllText(budgetFile);
+                budgetDisplay.Text = budgetText;
 
-                var expense = new Expense
+                var expenses = new List<Expense>();
+                var expenseFiles = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
+
+                foreach (var filename in expenseFiles)
                 {
-                    Name = expenseText[0].Trim(),
-                    Amount = decimal.Parse(expenseText[1]),
-                    EntryDate = File.GetCreationTime(filename)
-                };
-                expenses.Add(expense);
-            }
-            listView.ItemsSource = expenses.OrderBy(n => n.EntryDate);
-        }
+                    var expenseText = File.ReadAllText(filename).Split(';');
 
-
-        // An expense edit page is something we can look into in the future. 
-        private void OnExpenseSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-
-            /*await Navigation.PushModalAsync(new ExpenseEditPage
-            {
-                BindingContext = (Expense)e.SelectedItem
-            });*/
-        }
-
-        private void OnNewBudgetClicked(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
-
-            /*await Navigation.PushModalAsync(new BudgetEntryPage
-            {
-                BindingContext = new Budget { }
-            });*/
-
-            var files = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
-
-            foreach (var filename in files)
-            {
-
-                if (File.Exists(filename))
-                {
-                    File.Delete(filename);
+                    var expense = new Expense
+                    {
+                        Name = expenseText[0].Trim(),
+                        Amount = decimal.Parse(expenseText[1]),
+                        EntryDate = File.GetCreationTime(filename)
+                    };
+                    expenses.Add(expense);
                 }
+                listView.ItemsSource = expenses.OrderBy(n => n.EntryDate);
             }
+
+            // If budget text file does not exist - send user to budget entry page. 
+            else
+            {
+                await Navigation.PushModalAsync(new BudgetEntryPage
+                {
+                    BindingContext = new Budget { }
+                });
+            }            
+        }
+
+        private async void OnNewBudgetClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new BudgetEntryPage { });            
         }
 
         private async void OnNewExpenseClicked(object sender, EventArgs e)
@@ -79,12 +69,14 @@ namespace ExpenseTrackerApp
             { 
                 BindingContext = new Expense()
             });
+        }
 
 
-            /*await Navigation.PushModalAsync(new ExpenseEntryPage
-            {
-                BindingContext = new Expense { }
-            });*/
+        //The below button clicked method is for test purposes and can be deleted along with the "Delete Budget" in the future
+        private void OnDeleteBudgetClicked(object sender, EventArgs e)
+        {
+            var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
+            File.Delete(budgetFile);            
         }
     }
 }

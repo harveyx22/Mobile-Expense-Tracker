@@ -5,49 +5,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Expense Entry"
-             x:Class="ExpenseTrackerApp.ExpenseEntryPage">
+             x:Class="ExpenseTrackerApp.ExpenseEntryPage"
+             Padding="10"
+             BackgroundColor="SkyBlue">
     <ContentPage.Content>
-        
-        <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="10">
 
-                <Label Text="Name" />
-                <Entry x:Name="name" Placeholder="Expense Name" ClearButtonVisibility="WhileEditing"
-                   Keyboard="Text" />
+            <StackLayout Spacing="0">
+                <Label Text="Description" TextColor="Black" FontSize="24"/>
+                <Entry x:Name="name" Placeholder="Expense Name" FontSize="24" ClearButtonVisibility="WhileEditing"
+                   Keyboard="Text"/>
+            </StackLayout>
 
-                <Label Grid.Row="1" Text="Amount" />
-                <Entry Grid.Row="1"  x:Name="amount" ClearButtonVisibility="WhileEditing" Keyboard="Numeric" />
+            <StackLayout Spacing="0">
+                <Label Text="Amount" TextColor="Black" FontSize="24"/>
+                <Entry x:Name="amount" Placeholder="$0.00" FontSize="24" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+            </StackLayout>
 
-                <Label Grid.Row="2" Text="Date" />
-                <DatePicker Grid.Row="2" x:Name="expensedate" Format="D" VerticalOptions="CenterAndExpand" />
+            <StackLayout Spacing="0">
+                <Label Text="Date" TextColor="Black" FontSize="24"/>
+                <DatePicker x:Name="expensedate" Format="d" FontSize="24" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
 
-                <Label Grid.Row="3" Text="Category" />
-
+            <StackLayout Spacing="0">
+                <Label Text="Category" TextColor="Black" FontSize="24"/>
                 <ListView Grid.Row="3" x:Name="selectCategory">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ImageCell Text="{Binding Name}"
-                                       ImageSource="{Binding Image} "/>
+                                       ImageSource="{Binding Image}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+            </StackLayout>                
 
-                <Grid Grid.Row="4" x:Name="buttons">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                    <Button Text="Cancel" Grid.Column="1" Clicked="OnCancelButtonClicked" />
-                </Grid>
-            </Grid>
+            <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="CenterAndExpand">
+                <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveButtonClicked" />
+                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnCancelButtonClicked" />
+            </StackLayout>
+
         </StackLayout>
 
     </ContentPage.Content>
