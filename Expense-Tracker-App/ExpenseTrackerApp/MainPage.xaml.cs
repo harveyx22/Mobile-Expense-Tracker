@@ -23,12 +23,15 @@ namespace ExpenseTrackerApp
 
         protected override async void OnAppearing()
         {
+            
+
             // Check if budget text file exists and populate list view with expenses if it does.
             var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
             if (File.Exists(budgetFile))
             {
-                var budgetText = File.ReadAllText(budgetFile);
-                budgetDisplay.Text = budgetText;
+                var budget = decimal.Parse(File.ReadAllText(budgetFile));
+                string formattedBudget = string.Format("${0:F2}", budget);
+                budgetDisplay.Text = formattedBudget;
 
                 var expenses = new List<Expense>();
                 var expenseFiles = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "*.expense.txt");
@@ -41,7 +44,9 @@ namespace ExpenseTrackerApp
                     {
                         Name = expenseText[0].Trim(),
                         Amount = decimal.Parse(expenseText[1]),
-                        EntryDate = File.GetCreationTime(filename)
+                        EntryDate = File.GetCreationTime(filename),
+                        ExpenseDate = expenseText[2],
+                        Filename = expenseText[3]
                     };
                     expenses.Add(expense);
                 }

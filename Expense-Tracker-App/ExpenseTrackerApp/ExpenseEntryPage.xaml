@@ -13,7 +13,7 @@
 
             <StackLayout Spacing="0">
                 <Label Text="Description" TextColor="Black" FontSize="24"/>
-                <Entry x:Name="name" Placeholder="Expense Name" FontSize="24" ClearButtonVisibility="WhileEditing"
+                <Entry x:Name="name" Placeholder="Expense Description" FontSize="24" ClearButtonVisibility="WhileEditing"
                    Keyboard="Text"/>
             </StackLayout>
 

@@ -12,7 +12,7 @@ namespace ExpenseTrackerApp.Models
 
         public decimal Amount { get; set; }
 
-        public DateTime ExpenseDate { get; set; }
+        public string ExpenseDate { get; set; }
 
         public DateTime EntryDate { get; set; }
 
