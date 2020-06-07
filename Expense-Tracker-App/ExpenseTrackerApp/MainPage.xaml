@@ -55,7 +55,7 @@
         <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand" Margin="0,0,0,25">
             <Button Text="New Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewBudgetClicked"/>
             <Button Text="Add Expense" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnNewExpenseClicked" />
-            <Button Text="Delete Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnDeleteBudgetClicked" />
+        <!--    <Button Text="Delete Budget" FontSize="24" TextColor="Black" BackgroundColor="Gray" Clicked="OnDeleteBudgetClicked" />  -->
         </StackLayout>
         
     </StackLayout>

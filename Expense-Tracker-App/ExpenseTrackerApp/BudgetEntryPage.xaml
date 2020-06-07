@@ -15,8 +15,8 @@
             <Entry x:Name ="budgetEntry" Placeholder="$0.00" FontSize="24" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
 
             <StackLayout Orientation="Horizontal" Spacing="40" HorizontalOptions="CenterAndExpand">
-                <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveButtonClicked" />
-                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray"  Clicked="OnCancelButtonClicked" />
+                <Button Text="Save" TextColor="Black" FontSize="24" BackgroundColor="Gray" Clicked="OnSaveBudgetClicked" />
+                <Button Text="Cancel" TextColor="Black" FontSize="24" BackgroundColor="Gray"  Clicked="OnCancelBudgetClicked" />
             </StackLayout>
             
         </StackLayout>
