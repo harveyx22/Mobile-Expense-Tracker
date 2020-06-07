@@ -29,25 +29,34 @@ namespace ExpenseTrackerApp
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            string budget;
-            decimal expense;
-            string result = (budget - expense);
-            if (Budget > 0) 
-            {
-                return result;
-            }
             var expense = (Expense)BindingContext;
             var chosen = (Category)selectCategory.SelectedItem;
-            
-            if (string.IsNullOrWhiteSpace(expense.Filename))
+
+            var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Budget.txt");
+
+            decimal CurrentBudget = decimal.Parse(File.ReadAllText(budgetFile));
+            decimal CurrentExpense = decimal.Parse(amount.Text);
+
+            if (CurrentBudget - CurrentExpense >= 0)
             {
-                expense.Filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{Path.GetRandomFileName()}.expense.txt");
-                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
+                CurrentBudget = CurrentBudget - CurrentExpense;
+                File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt"), CurrentBudget.ToString());
+
+                if (string.IsNullOrWhiteSpace(expense.Filename))
+                {
+                    expense.Filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"{Path.GetRandomFileName()}.expense.txt");
+                    File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
+                }
+                else
+                {
+                    File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
+                }
             }
+
             else
             {
-                File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
-            }
+                await DisplayAlert("Warning", "Insufficient funds in the budget for this purchase", "OK");
+            }         
 
             await Navigation.PopModalAsync();
         }

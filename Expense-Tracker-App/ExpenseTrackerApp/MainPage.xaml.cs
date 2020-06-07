@@ -78,10 +78,10 @@ namespace ExpenseTrackerApp
 
 
         //The below button clicked method is for test purposes and can be deleted along with the "Delete Budget" in the future
-        private void OnDeleteBudgetClicked(object sender, EventArgs e)
-        {
-            var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
-            File.Delete(budgetFile);            
-        }
+       // private void OnDeleteBudgetClicked(object sender, EventArgs e)
+      //  {
+      //      var budgetFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt");
+      //      File.Delete(budgetFile);            
+      ///  }
     }
 }
