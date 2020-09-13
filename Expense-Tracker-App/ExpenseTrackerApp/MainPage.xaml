@@ -6,7 +6,8 @@
              mc:Ignorable="d"             
              x:Class="ExpenseTrackerApp.MainPage" 
              Title="This Month's Expenses" 
-             BackgroundColor="SkyBlue">
+             BackgroundColor="SkyBlue"
+             x:Name="Main">
 
     <StackLayout Orientation="Vertical" Spacing="10">
         

@@ -30,6 +30,16 @@ namespace ExpenseTrackerApp
             if (File.Exists(budgetFile))
             {
                 var budget = decimal.Parse(File.ReadAllText(budgetFile));
+
+                if (budget < 0)
+                {
+                    Main.BackgroundColor = Color.Red;
+                }
+                else
+                {
+                    Main.BackgroundColor = Color.SkyBlue;
+                }
+
                 string formattedBudget = string.Format("${0:F2}", budget);
                 budgetDisplay.Text = formattedBudget;
 

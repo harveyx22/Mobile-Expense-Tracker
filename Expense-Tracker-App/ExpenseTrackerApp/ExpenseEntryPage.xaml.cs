@@ -37,7 +37,7 @@ namespace ExpenseTrackerApp
             decimal CurrentBudget = decimal.Parse(File.ReadAllText(budgetFile));
             decimal CurrentExpense = decimal.Parse(amount.Text);
 
-            if (CurrentBudget - CurrentExpense >= 0)
+            //if (CurrentBudget - CurrentExpense >= 0)
             {
                 CurrentBudget = CurrentBudget - CurrentExpense;
                 File.WriteAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), $"Budget.txt"), CurrentBudget.ToString());
@@ -52,12 +52,11 @@ namespace ExpenseTrackerApp
                     File.WriteAllText(expense.Filename, $"{name.Text};{amount.Text};{expensedate.Date.ToShortDateString()};{chosen.Image}");
                 }
             }
-
-            else
+            /*else
             {
                 await DisplayAlert("Warning", "Insufficient funds in the budget for this purchase", "OK");
             }         
-
+*/
             await Navigation.PopModalAsync();
         }
 
